@@ -1,12 +1,22 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
+import { MasterService } from './services/master.service';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet,RouterLink],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
   title = 'college_project_competetion';
+
+  masterSrv = inject(MasterService);
+  router = inject(Router);
+  
+  onLogout(){
+    localStorage.removeItem('studentId');
+    this.masterSrv.loggedUserId = '';
+    this.router.navigateByUrl('/home');
+  }
 }

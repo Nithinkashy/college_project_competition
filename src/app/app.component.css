@@ -1,0 +1,83 @@
+
+.btn-register {
+  background-color: #ff6b35;
+  border-color: #ff6b35;
+  color: white;
+}
+.btn-register:hover {
+  background-color: #e05a2b;
+  border-color: #e05a2b;
+  color: white;
+}
+
+/* User Dropdown Styles */
+.navbar .dropdown-toggle {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  padding: 0.5rem 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.navbar .dropdown-toggle:hover {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.navbar .dropdown-menu {
+  background-color: #343a40;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.175);
+}
+
+.navbar .dropdown-item {
+  color: rgba(255, 255, 255, 0.85);
+  padding: 0.5rem 1.5rem;
+  transition: all 0.2s;
+}
+
+.navbar .dropdown-item:hover {
+  color: white;
+  background-color: #495057;
+}
+
+.navbar .dropdown-item i {
+  width: 20px;
+  text-align: center;
+  margin-right: 10px;
+}
+
+.navbar .dropdown-divider {
+  border-color: rgba(255, 255, 255, 0.1);
+  margin: 0.25rem 0;
+}
+
+/* Profile image styling */
+.navbar .rounded-circle {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+  border: 2px solid rgba(255, 255, 255, 0.25);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 991.98px) {
+  .navbar .dropdown-menu {
+      background-color: transparent;
+      border: none;
+      box-shadow: none;
+      padding-left: 1rem;
+  }
+
+  .navbar .dropdown-item {
+      padding: 0.5rem 0;
+  }
+
+  .navbar .dropdown-item:hover {
+      background-color: transparent;
+  }
+
+  .navbar .dropdown-divider {
+      display: none;
+  }
+}

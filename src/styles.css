@@ -1,1 +1,99 @@
-/* You can add global styles to this file, and also import other style files */
+.hero-section {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 100px 0;
+}
+.feature-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #0d6efd;
+}
+.timeline {
+  position: relative;
+  padding-left: 50px;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 20px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #0d6efd;
+}
+.timeline-item {
+  position: relative;
+  margin-bottom: 30px;
+}
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -40px;
+  top: 5px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #0d6efd;
+  border: 3px solid white;
+}
+.sponsor-logo {
+  height: 60px;
+  margin: 15px;
+  filter: grayscale(100%);
+  transition: all 0.3s;
+}
+.sponsor-logo:hover {
+  filter: grayscale(0%);
+}
+.btn-register {
+  background-color: #ff6b35;
+  border-color: #ff6b35;
+  color: white;
+}
+.btn-register:hover {
+  background-color: #e05a2b;
+  border-color: #e05a2b;
+  color: white;
+}
+.category-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s;
+  height: 100%;
+}
+.category-card:hover {
+  transform: translateY(-5px);
+}
+.category-img {
+  height: 180px;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+.category-card:hover .category-img {
+  transform: scale(1.05);
+}
+.status-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  z-index: 1;
+}
+.status-open {
+  background-color: #28a745;
+  color: white;
+}
+.status-closing {
+  background-color: #ffc107;
+  color: black;
+}
+.status-coming {
+  background-color: #17a2b8;
+  color: white;
+}
+
