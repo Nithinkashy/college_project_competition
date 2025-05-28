@@ -11,7 +11,7 @@
               <!-- Competition Selection -->
               <div class="mb-4">
                   <h5 class="mb-3"><i class="fas fa-trophy me-2"></i>Competition Details</h5>
-                  <div class="mb-3">
+                  <!-- <div class="mb-3">
                       <label for="competition" class="form-label required-field">Select Competition</label>
                       <select class="form-select" id="competition" required>
                           <option value="" selected disabled>Choose a competition</option>
@@ -20,7 +20,7 @@
                           <option value="3">Social Impact Hackathon</option>
                           <option value="4">Arts & Design Showcase</option>
                       </select>
-                  </div>
+                  </div> -->
               </div>
 
               <!-- Project Information -->
@@ -28,30 +28,34 @@
                   <h5 class="mb-3"><i class="fas fa-project-diagram me-2"></i>Project Information</h5>
                   <div class="mb-3">
                       <label for="projectTitle" class="form-label required-field">Project Title</label>
-                      <input type="text" class="form-control" id="projectTitle" required>
+                      <input type="text" [(ngModel)]="projectObj.projectTitle" name="projectTitle" class="form-control" id="projectTitle" required>
                   </div>
                   <div class="mb-3">
                       <label for="projectDescription" class="form-label required-field">Description</label>
-                      <textarea class="form-control" id="projectDescription" rows="4" required></textarea>
-                  </div>
-                  <div class="mb-3">
-                      <label class="form-label">Project Tags</label>
-                      <div class="mb-2" id="tagsContainer">
-                          <!-- Tags will be added here -->
-                      </div>
-                      <div class="input-group">
-                          <input type="text" class="form-control" id="tagInput" placeholder="Add tags (e.g., AI, Sustainability, Web App)">
-                          <button class="btn btn-outline-secondary" type="button" id="addTagBtn">Add</button>
-                      </div>
-                      <small class="text-muted">Press Enter or click Add to include tags</small>
+                      <textarea class="form-control" [(ngModel)]="projectObj.description" name="description" id="projectDescription" rows="4" required></textarea>
                   </div>
               </div>
 
-              <!-- Team Members -->
               <div class="mb-4">
+                <h5 class="mb-3"><i class="fas fa-project-diagram me-2"></i>Submission Date</h5>
+                <div class="mb-3">
+                    <label for="submissionDate" class="form-label required-field">Date of Submit</label>
+                    <input type="date" [(ngModel)]="projectObj.submissionDate" name="submissionDate" class="form-control" id="submissionDate" required>
+                </div>
+              </div>
+              <div class="mb-4">
+                <h5 class="mb-3"><i class="fas fa-project-diagram me-2"></i>Submission Status</h5>
+                <div class="mb-3">
+                    <label for="status" class="form-label required-field">Status of Submission</label>
+                    <input type="text" [(ngModel)]="projectObj.status" name="status" class="form-control" id="status" required>
+                </div>
+              </div>
+
+              <!-- Team Members -->
+              <!-- <div class="mb-4">
                   <h5 class="mb-3"><i class="fas fa-users me-2"></i>Team Members</h5>
                   <div id="teamMembersContainer">
-                      <!-- Team members will be added here -->
+
                       <div class="team-member-item">
                           <i class="fas fa-times remove-member"></i>
                           <div class="row">
@@ -69,29 +73,20 @@
                   <button type="button" class="btn btn-outline-primary mt-2" id="addMemberBtn">
                       <i class="fas fa-plus me-1"></i>Add Team Member
                   </button>
-              </div>
+              </div> -->
 
               <!-- Additional Files -->
               <div class="mb-4">
                   <h5 class="mb-3"><i class="fas fa-file-alt me-2"></i>Project Files</h5>
                   <div class="mb-3">
-                      <label for="projectFiles" class="form-label">Upload Project Files</label>
-                      <input class="form-control" type="file" id="projectFiles" multiple>
-                      <small class="text-muted">You can upload multiple files (PDF, PPT, DOC, ZIP, etc.)</small>
-                  </div>
-                  <div class="mb-3">
-                      <label for="projectVideo" class="form-label">Project Video URL (Optional)</label>
-                      <input type="url" class="form-control" id="projectVideo" placeholder="https://youtube.com/your-video">
+                      <label for="githubLink" class="form-label">Upload Project URL</label>
+                      <input class="form-control" [(ngModel)]="projectObj.githubLink" name="githubLink" type="text" id="githubLink">
                   </div>
               </div>
 
               <!-- Terms and Submit -->
-              <div class="mb-3 form-check">
-                  <input type="checkbox" class="form-check-input" id="agreeTerms" required>
-                  <label class="form-check-label" for="agreeTerms">I confirm that this is my team's original work and agree to the <a href="#">competition terms</a></label>
-              </div>
               <div class="d-grid">
-                  <button type="submit" class="btn btn-submit btn-lg">
+                  <button (click)="submitProject()" type="submit" class="btn btn-submit btn-lg">
                       <i class="fas fa-paper-plane me-1"></i>Submit Project
                   </button>
               </div>
@@ -101,20 +96,22 @@
       <!-- Preview Column -->
       <div class="col-lg-5 preview-section">
           <div class="sticky-top" style="top: 20px;">
-              <h4 class="mb-4"><i class="fas fa-eye me-2"></i>Submission Preview</h4>
-              <div class="preview-card">
-                  <h5 class="preview-title">Competition</h5>
-                  <p id="previewCompetition" class="text-muted">No competition selected</p>
-              </div>
+              <h4 class="mb-4"><i class="fas fa-eye me-2"></i>Preview Of Competition</h4>
               <div class="preview-card">
                   <h5 class="preview-title">Project Details</h5>
-                  <h6 id="previewTitle">No title entered</h6>
-                  <p id="previewDescription" class="text-muted">No description provided</p>
+                  <h6 id="previewTitle">Title : {{competitionData.title}}</h6>
+                  <p id="previewDescription" class="text-muted">Description : {{competitionData.description}}</p>
                   <div id="previewTags">
-                      <span class="text-muted">No tags added</span>
+                    <span class="badge bg-success" >Status : {{competitionData.status}}</span>
+                </div>
+                  <div id="previewTags">
+                      <span class="text-muted">Start Date : {{competitionData.startDate | date:'dd-MM-yyyy'}}</span>
                   </div>
+                  <div id="previewTags">
+                    <span class="text-muted">End Date : {{competitionData.endDate | date:'dd-MM-yyyy'}}</span>
+                </div>
               </div>
-              <div class="preview-card">
+              <!-- <div class="preview-card">
                   <h5 class="preview-title">Team Members</h5>
                   <div id="previewTeam">
                       <span class="text-muted">No team members added</span>
@@ -126,8 +123,9 @@
                       <span class="text-muted">No files uploaded</span>
                   </div>
                   <div id="previewVideo" class="mt-2"></div>
-              </div>
+              </div> -->
           </div>
       </div>
+
   </div>
 </div>

@@ -5,3 +5,5 @@ export interface IRegister {
   collegeName: string;
   role:        string;
 }
+
+

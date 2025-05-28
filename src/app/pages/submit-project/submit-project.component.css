@@ -95,3 +95,7 @@
       border-bottom: 1px solid #eee;
   }
 }
+.badge.bg-success {
+  background-color: #d1e7dd !important;
+  color: #0f5132;
+}
