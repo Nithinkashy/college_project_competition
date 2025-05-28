@@ -11,35 +11,14 @@
               <li class="nav-item">
                   <a class="nav-link active" href="#">Home</a>
               </li>
-              <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown">
-                      About
-                  </a>
-                  <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Competition Details</a></li>
-                      <li><a class="dropdown-item" href="#">Previous Winners</a></li>
-                      <li><a class="dropdown-item" href="#">Organizing Committee</a></li>
-                  </ul>
-              </li>
-              <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="categoriesDropdown" role="button" data-bs-toggle="dropdown">
-                      Categories
-                  </a>
-                  <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#categories">Technology & Innovation</a></li>
-                      <li><a class="dropdown-item" href="#categories">Social Impact</a></li>
-                      <li><a class="dropdown-item" href="#categories">Business & Entrepreneurship</a></li>
-                      <li><a class="dropdown-item" href="#categories">Arts & Design</a></li>
-                  </ul>
+              <li class="nav-item">
+                  <a class="nav-link" routerLink="/competition">Competition</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link" href="#">Schedule</a>
+                  <a class="nav-link" href="#">Past Winners</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link" href="#">Prizes</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="#">Contact</a>
+                  <a class="nav-link" href="#">About</a>
               </li>
           </ul>
           @if (masterSrv.loggedUserId == '') {
@@ -55,7 +34,7 @@
             <div class="dropdown">
               <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown">
                   <img src="https://via.placeholder.com/30" class="rounded-circle me-2" alt="User profile">
-                  <span>John Doe</span>
+                  <span>{{masterSrv.loggedUserData.fullName}}</span>
               </a>
               <ul class="dropdown-menu dropdown-menu-end">
                   <li><a class="dropdown-item" href="dashboard.html"><i class="fas fa-tachometer-alt me-2"></i>Dashboard</a></li>

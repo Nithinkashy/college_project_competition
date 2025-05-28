@@ -207,6 +207,49 @@
   </div>
 </section>
 
+<!-- Competations display-->
+
+<section id="competitions" class="py-5 bg-light">
+  <div class="container">
+      <h2 class="text-center fw-bold mb-5">Current Competitions</h2>
+      <div class="row g-4">
+          <!-- Competition 1 -->
+          @for (item of gridList; track $index) {
+            <div class="col-md-6 col-lg-4">
+              <div class="card competition-card shadow-sm h-100">
+                  <span class="status-badge status-active">{{item.status}}</span>
+                  <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" class="card-img-top competition-img" alt="Tech Challenge">
+                  <div class="card-body">
+                      <h4 class="card-title">{{item.title}}</h4>
+                      <p class="card-text">{{item.description}}</p>
+                      <div class="competition-meta mb-3">
+                          <div class="d-flex align-items-center mb-2">
+                              <i class="fas fa-calendar-alt me-2 text-primary"></i>
+                              <small>Start Date: {{item.startDate | date:'dd-mm-yyyy'}}</small>
+                          </div>
+                          <div class="d-flex align-items-center mb-2">
+                            <i class="fas fa-calendar-alt me-2 text-primary"></i>
+                            <small>End Date: {{item.endDate | date:'dd-mm-yyyy'}}</small>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="card-footer bg-transparent border-top-0">
+                      <div class="d-flex justify-content-between align-items-center">
+                          <a [routerLink]="'/submit-project/'+item.competitionId" class="btn btn-sm btn-outline-primary">View Details</a>
+                          <small class="text-muted">32 teams registered</small>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          }
+      </div>
+      <div class="text-center mt-4">
+          <a href="#" class="btn btn-primary me-2">View All Competitions</a>
+          <a href="#" class="btn btn-outline-primary">Past Competitions</a>
+      </div>
+  </div>
+</section>
+
 <!-- Prizes -->
 <section class="py-5">
   <div class="container">

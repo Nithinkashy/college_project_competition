@@ -1,0 +1,65 @@
+.card {
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  height: 100%;
+}
+.card-header {
+  background-color: #0d6efd;
+  color: white;
+  border-radius: 10px 10px 0 0 !important;
+  padding: 15px 20px;
+}
+.table-responsive {
+  max-height: 600px;
+  overflow-y: auto;
+}
+.table thead th {
+  position: sticky;
+  top: 0;
+  background-color: #f8f9fa;
+  z-index: 10;
+}
+.btn-action {
+  padding: 5px 10px;
+  margin: 0 3px;
+}
+.status-badge {
+  top: 0;
+  right: 0;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  position: relative;
+}
+.status-active {
+  background-color: #d1e7dd;
+  color: #0f5132;
+}
+.status-upcoming {
+  background-color: #fff3cd;
+  color: #664d03;
+}
+.status-completed {
+  background-color: #f8d7da;
+  color: #842029;
+}
+.form-section {
+  position: sticky;
+  top: 20px;
+}
+.empty-state {
+  text-align: center;
+  padding: 40px;
+  color: #6c757d;
+}
+.empty-state i {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  color: #dee2e6;
+}
+.competition-container{
+  background-color: #f8f9fa;
+  padding: 20px;
+}

@@ -26,10 +26,11 @@ export class LoginComponent {
     this.http.post("https://api.freeprojectapi.com/api/ProjectCompetition/login",this.loginObj).subscribe({
       next:(res:any)=>{
         localStorage.setItem("studentId",res.userId);
-        localStorage.setItem("loggesUser",JSON.stringify(res));
+        localStorage.setItem("loggedUser",JSON.stringify(res));
         alert("User Found Successfully");
         this.router.navigateByUrl('/home');
         this.masterSrv.loggedUserId = res.userId;
+        this.masterSrv.loggedUserData = res;
       }
     })
   }

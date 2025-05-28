@@ -7,10 +7,16 @@ import { inject, Injectable } from '@angular/core';
 export class MasterService {
 
   loggedUserId:string = "";
+  loggedUserData:any = undefined;
+
   constructor() {
     const loggedData = localStorage.getItem("studentId");
+    const loggedUserData = localStorage.getItem("loggedUser");
     if(loggedData != null){
       this.loggedUserId = loggedData;
+    }
+    if(loggedUserData != null){
+      this.loggedUserData = JSON.parse(loggedUserData);
     }
    }
   http = inject(HttpClient);

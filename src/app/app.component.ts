@@ -13,10 +13,12 @@ export class AppComponent {
 
   masterSrv = inject(MasterService);
   router = inject(Router);
-  
+
   onLogout(){
     localStorage.removeItem('studentId');
+    localStorage.removeItem('loggedUser');
     this.masterSrv.loggedUserId = '';
+    this.masterSrv.loggedUserData = '';
     this.router.navigateByUrl('/home');
   }
 }

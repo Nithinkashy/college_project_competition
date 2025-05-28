@@ -1,0 +1,56 @@
+.competition-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.competition-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.competition-img {
+  height: 180px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.competition-card:hover .competition-img {
+  transform: scale(1.05);
+}
+
+.status-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  z-index: 1;
+}
+
+.status-active {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.status-upcoming {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.status-completed {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.competition-meta {
+  background-color: #f8f9fa;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.card-footer {
+  padding: 1rem 1.25rem;
+}
